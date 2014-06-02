@@ -11,24 +11,28 @@ Basically, a stripped down, minimalized version of backbone.js' event system. ag
 Global event aggregator:
 
 Subscribe
-    EventAggregator.on('my event', callback, context);
+
+	EventAggregator.on('my event', callback, context);
 
 Unsubscribe
-    // Unsubscribe all events
-    EventAggregator.off();
-    // Unsubscribe all specific events
-    EventAggregator.off('my event');
+
+	// Unsubscribe all events
+	EventAggregator.off();
+	// Unsubscribe all specific events
+	EventAggregator.off('my event');
 
 Trigger (publish)
-    // Trigger an event
-    EventAggregator.trigger('my event', args);
+
+	// Trigger an event
+	EventAggregator.trigger('my event', args);
 
 
 Use by extending:
-    // Now myEventfulClass has on, off and trigger methods
-    var myEventfulClass = EventSystem.extend({});
 
-    var myEventfulInstance = new myEventfulClass();
-    
-    // Now all methods have a context of myEventfulInstance.
-    myEventfulInstance.trigger('my event');
+	// Now myEventfulClass has on, off and trigger methods
+	var myEventfulClass = EventSystem.extend({});
+	
+	var myEventfulInstance = new myEventfulClass();
+	
+	// Now all methods have a context of myEventfulInstance.
+	myEventfulInstance.trigger('my event');
